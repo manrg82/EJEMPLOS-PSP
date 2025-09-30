@@ -1,0 +1,22 @@
+package pspt1;
+
+public class ContaVocal {
+	public int contVocal(String fl, char voc) {
+		int resul=0;
+		try{
+			String vocal=""+voc;
+			for(int i=0;i<fl.length();i++) {
+				if(fl.charAt(i).equals) {
+					resul++;
+				}
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return resul;
+	}
+	public static void main(String[] Args) {
+		ContaVocal contador=new ContaVocal();
+		System.out.println(contador.contVocal("files/texto.txt",'a'));
+	}
+}

@@ -1,0 +1,15 @@
+package pspt1;
+
+public class Multiplicador {
+	public static int multiplicar(int n1, int n2) {
+		return n1*n2;
+	}
+	public static void main(String[] Args) {
+		int nm1=2;
+		int nm2=3;
+		int res=multiplicar(nm1,nm2);
+		System.out.println("Resultado: "+res);
+		LanzadorMultiplicador lz=new LanzadorMultiplicador();
+		lz.lanzarMultiplicador(nm2, res, "C:\res.txt");
+	}
+}

@@ -1,0 +1,28 @@
+package pspt1;
+
+import java.io.File;
+
+public class LanzarProcesos {
+	public void lanzarContador(String file, char voc) {
+		ProcessBuilder pb;
+        try {
+        	String clase = "pspt1.ContaVocal";
+        	String classPath = ".;./bin";
+			
+     	   pb = new ProcessBuilder("java", "-cp", classPath, clase,String.valueOf(n1),String.valueOf(n2));
+                pb.redirectError(new File("files" + File.separator + "error_"+System.currentTimeMillis()+".log"));
+                pb.redirectOutput(new File("files" + File.separator + fic));
+                Process pr=pb.start();
+                int exitValue = pr.waitFor();
+                System.out.println("Exit Value: "+exitValue);
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

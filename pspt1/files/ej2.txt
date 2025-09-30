@@ -1,0 +1,15 @@
+ El volumen de la unidad C no tiene etiqueta.
+ El n£mero de serie del volumen es: 3C16-F8AE
+
+ Directorio de C:\EJEMPLOS-PSP\pspt1
+
+30/09/2025  12:27    <DIR>          .
+30/09/2025  12:27    <DIR>          ..
+30/09/2025  10:44               396 .classpath
+30/09/2025  10:44               381 .project
+30/09/2025  10:44    <DIR>          .settings
+30/09/2025  11:01    <DIR>          bin
+30/09/2025  12:39    <DIR>          files
+30/09/2025  10:45    <DIR>          src
+               2 archivos            777 bytes
+               6 dirs  398.402.113.536 bytes libres

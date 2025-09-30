@@ -1,0 +1,14 @@
+package pspt1;
+
+public class LanzadorMultiplicador {
+	public void lanzarMultiplicador(int n1,int n2,String fic) {
+		ProcessBuilder pb;
+        try {
+                pb = new ProcessBuilder(
+                		"java","./bin" );
+                pb.start();
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+	}
+}

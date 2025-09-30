@@ -1,0 +1,26 @@
+package pspt1;
+
+import java.io.File;
+
+public class LanzadorMultiplicador {
+	public void lanzarMultiplicador(int n1,int n2,String fic) {
+		ProcessBuilder pb;
+        try {
+        	String clase = "Multiplicador";
+        	String classPath = ".;./bin/pspt1";
+			
+     	   pb = new ProcessBuilder("java", "-cp", classPath, clase,String.valueOf(n1),String.valueOf(n2));
+                pb.redirectError(new File("files" + File.separator + "error_"+System.currentTimeMillis()+".log"));
+                pb.redirectOutput(new File("files" + File.separator + fic));
+                Process pr=pb.start();
+                int exitValue = pr.waitFor();
+                System.out.println("Exit Value: "+exitValue);
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+	}
+	public static void main(String[] Args) {
+		LanzadorMultiplicador lz=new LanzadorMultiplicador();
+		lz.lanzarMultiplicador(2,3,"/res.txt");
+	}
+}

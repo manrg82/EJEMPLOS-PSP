@@ -1,0 +1,23 @@
+package pspt1;
+
+import java.io.File;
+
+public class CmdDir {
+	public void lanzarCMD() {
+		ProcessBuilder pb;
+        try {
+     	   pb = new ProcessBuilder("cmd", "dir");
+                pb.redirectError(new File("files" + File.separator + "error_"+System.currentTimeMillis()+".log"));
+                pb.redirectOutput(new File("files" + File.separator + "/ej2.txt"));
+                Process pr=pb.start();
+                int exitValue = pr.waitFor();
+                System.out.println("Exit Value: "+exitValue);
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+	}
+	public static void main(String[] Args) {
+		CmdDir lz=new CmdDir();
+		lz.lanzarCMD();
+	}
+}

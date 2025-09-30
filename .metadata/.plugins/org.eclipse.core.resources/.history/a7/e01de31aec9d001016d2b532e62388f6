@@ -1,0 +1,21 @@
+package pspt1;
+
+public class ContaVocal {
+	public int contVocal(String fl, char voc) {
+		int resul=0;
+		try{
+			for(int i=0;i<fl.length();i++) {
+				if(fl.charAt(i)==voc) {
+					resul++;
+				}
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return resul;
+	}
+	public static void main(String[] Args) {
+		ContaVocal contador=new ContaVocal();
+		System.out.println(contador.contVocal(Args[0],Args[1].charAt(0)));
+	}
+}

@@ -1,0 +1,16 @@
+package pspt1;
+
+public class LanzadorMultiplicador {
+	public void lanzarMultiplicador(int n1,int n2,String fic) {
+		ProcessBuilder pb;
+        try {
+        	String classPath = ".;./bin";
+			
+     	   pb = new ProcessBuilder("java", "-cp", classPath, clase, String.valueOf(n1),           
+                             String.valueOf(n2));
+                pb.start();
+        } catch (Exception e) {
+                e.printStackTrace();
+        }
+	}
+}

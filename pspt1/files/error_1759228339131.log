@@ -1,0 +1,2 @@
+Error: Could not find or load main class Multiplicador
+Caused by: java.lang.NoClassDefFoundError: Multiplicador (wrong name: pspt1/Multiplicador)

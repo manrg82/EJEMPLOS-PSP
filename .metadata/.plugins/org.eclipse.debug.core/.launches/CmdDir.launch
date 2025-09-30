@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+        <listEntry value="/pspt1/src/pspt1/CmdDir.java"/>
+    </listAttribute>
+    <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+        <listEntry value="1"/>
+    </listAttribute>
+    <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="pspt1.CmdDir"/>
+    <stringAttribute key="org.eclipse.jdt.launching.MODULE_NAME" value="pspt1"/>
+    <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="pspt1"/>
+</launchConfiguration>

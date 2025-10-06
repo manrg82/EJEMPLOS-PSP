@@ -1,28 +1,79 @@
 package pspt1;
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LanzarProcesos {
-	public void lanzarContador(String file, char voc) {
-		ProcessBuilder pb;
-        try {
-        	String clase = "pspt1.ContaVocal";
-        	String classPath = ".;./bin";
-			
-     	   pb = new ProcessBuilder("java", "-cp", classPath, clase,file,String.valueOf(voc));
-                pb.redirectError(new File("files" + File.separator + "error_"+System.currentTimeMillis()+".log"));
-                pb.redirectOutput(new File("files" + File.separator + "resultado "+voc+".txt"));
-                Process pr=pb.start();
-                int exitValue = pr.waitFor();
-                System.out.println("Exit Value: "+exitValue);
-        } catch (Exception e) {
-                e.printStackTrace();
-        }
-	}
-	
-	public static void main(String[] args) {
-		LanzarProcesos lz=new LanzarProcesos();
-		lz.lanzarContador("/files/texto.txt", 'a');
-	}
 
+    public static void lanzarProcesos() {
+
+        String fichero = "files/texto.txt";
+        String [] vocales = {"a", "e", "i", "o", "u"};
+        List <Process> procesos = new ArrayList();
+
+        ProcessBuilder pb;
+
+        for(String v : vocales) {
+
+            try {
+                String classPath = ".;./bin";
+
+                pb = new ProcessBuilder("java", "-cp", classPath, "com.psp.tres.ContarVocal", fichero, v);
+
+                procesos.add(pb.start());
+
+            } catch (IOException e) {
+
+                e.printStackTrace();
+            }
+        }
+
+
+        for (Process p : procesos) {
+
+            try {
+                p.waitFor();
+            } catch (InterruptedException e) {
+
+                e.printStackTrace();
+            }
+
+        }
+
+
+
+        int total = 0;
+        for(String v : vocales) {
+            File resultado = new File("files/resultado_"+v+".txt");
+
+            try(BufferedReader br = new BufferedReader(new FileReader(resultado))){
+
+                total += Integer.parseInt(br.readLine());
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+
+        System.out.println("Número total de vocales: " + total);
+
+
+
+
+    }
+
+
+    public static void main(String[] args) {
+        lanzarProcesos();
+    }
 }

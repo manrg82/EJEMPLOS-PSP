@@ -1,22 +1,47 @@
 package pspt1;
 
-public class ContaVocal {
-	public int contVocal(String fl, char voc) {
-		int resul=0;
-		try{
-			String vocal=""+voc;
-			for(int i=0;i<fl.length();i++) {
-				if(fl.charAt(i).equals) {
-					resul++;
-				}
-			}
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		return resul;
-	}
-	public static void main(String[] Args) {
-		ContaVocal contador=new ContaVocal();
-		System.out.println(contador.contVocal("files/texto.txt",'a'));
-	}
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class ContarVocal {
+
+    public static void contarVocales(String fichero, String vocal) {
+
+        try (BufferedReader br = new BufferedReader(new FileReader (fichero))){
+
+            int c;
+            int contador = 0;
+
+            char caracter;
+
+            while((c = br.read()) != -1) {
+
+                caracter = Character.toLowerCase((char) c);
+
+
+                if(caracter == vocal.charAt(0)) {
+                    contador ++;
+                }
+            }
+
+
+            try(BufferedWriter bw = new BufferedWriter(new FileWriter("files/resultado_"+vocal+".txt"))){
+                bw.write(String.valueOf(contador));
+            }
+
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void main(String[] args) {
+
+        contarVocales(args[0], args[1]);
+
+    }
 }

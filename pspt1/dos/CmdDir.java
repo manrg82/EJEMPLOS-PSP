@@ -1,4 +1,4 @@
-package com.psp.dos;
+package dos;
 
 
 import java.io.IOException;

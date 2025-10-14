@@ -1,4 +1,4 @@
-package com.psp.uno;
+package uno;
 
 public class Multiplicador {
 

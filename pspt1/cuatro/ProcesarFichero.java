@@ -1,4 +1,4 @@
-package com.psp.cuatro;
+package cuatro;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

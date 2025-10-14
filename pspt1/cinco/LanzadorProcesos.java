@@ -1,4 +1,4 @@
-package com.psp.cinco;
+package cinco;
 
 import java.io.File;
 import java.io.IOException;

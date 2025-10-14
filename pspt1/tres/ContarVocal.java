@@ -1,4 +1,4 @@
-package com.psp.tres;
+package tres;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;

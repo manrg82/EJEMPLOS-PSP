@@ -1,4 +1,4 @@
-package com.psp.seis;
+package seis;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class LanzadorProcesos {
 		 
 		 List<Process> procesos = new ArrayList<>();
 
-	     String clase = "com.psp.seis.CalcularFactorial";
+	     String clase = "seis.CalcularFactorial";
 	     String classPath = ".;./bin";
 	     
 	     

@@ -1,4 +1,4 @@
-package com.psp.seis;
+package seis;
 
 public class CalcularFactorial {
 	

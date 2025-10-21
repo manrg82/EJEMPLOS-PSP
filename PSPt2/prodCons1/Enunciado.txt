@@ -1,0 +1,16 @@
+Ejemplo problema Producto-Consumidor
+=====================================
+
+Tenemos un contador inicializado a 100, el cual va a ser incrementado/decrementado.
+
+Tenemos un productor que se ejecuta por un tiempo de 2 minutos, 
+que se encarga de incrementar el contador en 100 unidades, solo en el caso que el contador sea menor de 150.
+El productor después de cada acción, se debe dormir por 3 segundos.
+
+Por otro lado tenemos un consumidor, que se ejecuta infitimante, el cual se encarga de
+decrementar el contador en 50 unidades, pero solo en el caso que sea posible (nunca puede quedarse en números negativos). 
+El consumidor después de cada acción, se debe dormir por medio segundo.
+
+Indicar a través de un mensaje por consola, como queda el contador cuando el contador es incrementado o decrementado.
+
+El programa debe poder ejecutarse concurrentemente.

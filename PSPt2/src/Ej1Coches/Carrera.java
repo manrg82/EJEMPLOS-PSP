@@ -37,7 +37,7 @@ public class Carrera {
             for (Coche coche : coches) {
                 coche.avanzar();
                 if (coche.getDistanciaRecorrida() >= distanciaTotal) {
-                    System.out.println("El coche " + coche.getNombre() + " ha ganado la carrera ¡¡¡¡");
+                    System.out.println("El coche " + coche.getNombre() + " ha ganado la carrera�");
                     carreraTerminada = true;
                     break;
                 }

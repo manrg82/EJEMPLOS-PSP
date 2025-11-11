@@ -37,7 +37,7 @@ public class MainFacturas {
 
         System.out.println("\n--- FIN DE JORNADA ---");
         for (Empleado emp : empleados) {
-            System.out.println("El Empleado " + emp.getFacturasGeneradas() + " generó " + emp.getFacturasGeneradas() + " facturas.");
+            System.out.println("El Empleado " + emp.getFacturasGeneradas() + " genero " + emp.getFacturasGeneradas() + " facturas");
         }
     }
 }

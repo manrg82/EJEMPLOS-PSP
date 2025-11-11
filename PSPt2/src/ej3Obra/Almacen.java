@@ -19,12 +19,12 @@ public class Almacen {
 
     public synchronized void guardar(int cantidad) throws InterruptedException {
         while (stock + cantidad > CAPACIDAD_MAXIMA) {
-            System.out.println("ALMACÉN: No hay espacio para " + cantidad + " ladrillos (Stock: " + stock + "). Fábrica espera.");
+            System.out.println("ALMACEN: No hay espacio para " + cantidad + " ladrillos (Stock: " + stock + "). F�brica espera.");
             wait();
         }
 
         stock += cantidad;
-        System.out.println("FÁBRICA: Guarda " + cantidad + " ladrillos. Stock actual: " + stock);
+        System.out.println("F�BRICA: Guarda " + cantidad + " ladrillos. Stock actual: " + stock);
         notifyAll();
     }
 
@@ -35,7 +35,7 @@ public class Almacen {
             notifyAll();
             return true;
         } else {
-            System.out.println(nombreObra + ": INTENTO FALLIDO. Quería " + cantidad + " pero solo hay " + stock + ".");
+            System.out.println(nombreObra + ": INTENTO FALLIDO. Queria " + cantidad + " pero solo hay " + stock + ".");
             return false;
         }
     }

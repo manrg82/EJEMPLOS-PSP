@@ -29,7 +29,7 @@ public class Boxeador implements Runnable {
         try {
             while (ring.hayCombate()) {
                 if (noqueado) {
-                    System.out.println("-- " + this.nombre + " está noqueado.");
+                    System.out.println("-- " + this.nombre + " esta noqueado.");
                     Thread.sleep(1000);
                     this.noqueado = false;
                     this.golpesRecibidosParaKO = 0;

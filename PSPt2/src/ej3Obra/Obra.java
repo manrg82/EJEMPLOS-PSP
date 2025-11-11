@@ -6,8 +6,8 @@ public class Obra implements Runnable {
     private int gastoLote; 
     private int tiempoDescanso;
     private volatile boolean enFuncionamiento = true;
-    public Obra(Almacen almacen, String nombre, int gastoLote, int tiempoDescanso) {
-        this.almacen = almacen;
+    public Obra(String nombre, int gastoLote, int tiempoDescanso) {
+        this.almacen = Almacen.getInstancia();
         this.nombre = nombre;
         this.gastoLote = gastoLote;
         this.tiempoDescanso = tiempoDescanso;

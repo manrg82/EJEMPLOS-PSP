@@ -25,13 +25,13 @@ public class Empleado implements Runnable {
                 Factura factura = tarifa.generarFactura(consumo);
                 facturasGeneradas++;
 
-                System.out.printf("Factura %s con importe %.2f€ generada por el Empleado %d.\n",
+                System.out.printf("Factura %s con importe %.2f generada por el Empleado %d.\n",
                         factura.getNumero(), factura.getImporte(), this.id);
 
                 Thread.sleep(this.id * 1000);
             }
         } catch (InterruptedException e) {
-            System.out.println("Empleado " + this.id + " termina su turno.");
+            System.out.println("Empleado " + this.id + " termina su turno");
         }
     }
 }

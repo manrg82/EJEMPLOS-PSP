@@ -1,7 +1,7 @@
 package ej4Arbitro;
 import java.util.Random;
 
-public class Jugador implements Runnable {
+public class Jugador implements Runnable {//hacer con thread
 
     private int id;
     private Arbitro arbitro;
@@ -26,8 +26,8 @@ public class Jugador implements Runnable {
                 arbitro.jugar(this.id, jugada);
             }
         } catch (InterruptedException e) {
-            System.out.println("Jugador " + id + " interrumpido.");
+            System.out.println("Jugador " + id + " interrumpido");
         }
-        System.out.println("Jugador " + id + " termina de jugar.");
+        System.out.println("Jugador " + id + " termina de jugar");
     }
 }

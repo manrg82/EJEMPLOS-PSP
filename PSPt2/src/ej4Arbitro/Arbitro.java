@@ -10,7 +10,7 @@ public class Arbitro {
         this.numJugadores = numJugadores;
         this.numeroAdivinar = 1 + (int) (10 * Math.random());
         this.turno = 1 + (int) (numJugadores * Math.random());
-        System.out.println("Número a adivinar: " + this.numeroAdivinar);
+        System.out.println("Numero a adivinar: " + this.numeroAdivinar);
         System.out.println("Le toca jugar al jugador " + this.turno);
     }
 
@@ -25,20 +25,20 @@ public class Arbitro {
     }
 
     public synchronized void jugar(int id, int jugada) {
-        if (juegoTerminado) {
-            return;
+        if (!juegoTerminado) {
+
+            System.out.println("Jugador " + id + " dice: " + jugada);
+
+            if (jugada == numeroAdivinar) {
+                System.out.println("Jugador " + id + " gana");
+                juegoTerminado = true;
+            } else {
+                this.turno = 1 + (int) (numJugadores * Math.random());
+                System.out.println("Le toca jugar al jugador " + this.turno);
+            }
+
+            notifyAll();
         }
 
-        System.out.println("Jugador " + id + " dice: " + jugada);
-
-        if (jugada == numeroAdivinar) {
-            System.out.println("Jugador " + id + " gana, adivinó el número!!!");
-            juegoTerminado = true;
-        } else {
-            this.turno = 1 + (int) (numJugadores * Math.random());
-            System.out.println("Le toca jugar al jugador " + this.turno);
-        }
-
-        notifyAll();
     }
 }

@@ -1,4 +1,4 @@
-package ej6Boxeo;
+ package ej6Boxeo;
 
 public class Boxeador implements Runnable {
 

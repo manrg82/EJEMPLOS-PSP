@@ -1,59 +1,78 @@
 package ej9Barberia;
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 class GestorBarberia {
-    private int numSillas;
-    private int[] sillas; 
-    private boolean[] clienteAtendido;
-    
-    private Queue<Integer> colaSillasOcupadas = new LinkedList<>();
-
+    private Silla[] sillas;
+    private Queue<Silla> colaEspera;
+    private boolean abierto;
+	
     public GestorBarberia(int numSillas) {
-        this.numSillas = numSillas;
-        this.sillas = new int[numSillas];
-        this.clienteAtendido = new boolean[numSillas];
+        sillas = new Silla[numSillas];
+        colaEspera = new LinkedList<>();
+        abierto = true;
         for (int i = 0; i < numSillas; i++) {
-            sillas[i] = -1; 
-            clienteAtendido[i] = false;
+            sillas[i] = new Silla(i);
         }
     }
-    public synchronized int entrarEnBarberia(String nombreCliente) {
-        int sillaLibre = -1;
-        for (int i = 0; i < numSillas; i++) {
-            if (sillas[i] == -1) {
-                sillaLibre = i;
-                break;
+
+    public synchronized Silla solicitarSilla(String cliente) {
+        if (!abierto) return null;
+
+        for (Silla s : sillas) {
+            if (!colaEspera.contains(s) && !s.isAtendido()) {
+                System.out.println("El cliente " + cliente + " se ha sentado en la silla:" + s.getId());
+                System.out.println(cliente + " estoy sentado en la silla:" + s.getId());
+                colaEspera.add(s);
+                notify(); 
+                return s;
             }
         }
-        if (sillaLibre == -1) {
-            System.out.println(nombreCliente + " no habÃ­a sillas libres, me marcho");
-            return -1;
-        }
-        sillas[sillaLibre] = 1;
-        clienteAtendido[sillaLibre] = false;
-        colaSillasOcupadas.add(sillaLibre);
-        System.out.println("El cliente " + nombreCliente + " se ha sentado en la silla:" + sillaLibre);
-        System.out.println(nombreCliente + " estoy sentado en la silla:" + sillaLibre);
-        notifyAll(); 
-        return sillaLibre;
+        System.out.println(cliente + " no había sillas libres, me marcho");
+        return null;
     }
-    public synchronized void esperarCortePelo(int idSilla) throws InterruptedException {
-        while (!clienteAtendido[idSilla]) {
-            wait(); 
+
+    public void esperarCorte(Silla silla) {
+        synchronized (silla) {
+            try {
+                while (!silla.isAtendido()) {
+                    silla.wait();
+                }
+                silla.setAtendido(false); 
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
-        sillas[idSilla] = -1; 
     }
-    public synchronized int siguienteCliente(String idBarbero) throws InterruptedException {
-        while (colaSillasOcupadas.isEmpty()) {
-            wait(); 
+
+    public synchronized Silla esperarCliente() throws InterruptedException {
+        while (colaEspera.isEmpty() && abierto) {
+            wait();
         }
         
-        return colaSillasOcupadas.poll();
+        if (!abierto && colaEspera.isEmpty()) return null;
+        
+        return colaEspera.poll();
     }
-    public synchronized void finCorte(int idSilla, String idBarbero) {
-        System.out.println("Silla " + idSilla + " liberada por " + idBarbero);
-        clienteAtendido[idSilla] = true;
+
+    public void finalizarCorte(Silla silla, String barbero) {
+        System.out.println(barbero + " atendiendo silla: " + silla.getId());
+        try {
+            Thread.sleep(250);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        
+        synchronized (silla) {
+            System.out.println("Silla " + silla.getId() + " liberada por " + barbero);
+            silla.setAtendido(true);
+            silla.notify();
+        }
+    }
+
+    public synchronized void cerrar() {
+        abierto = false;
         notifyAll();
     }
 }

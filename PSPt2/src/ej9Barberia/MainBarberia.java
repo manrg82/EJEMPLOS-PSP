@@ -1,35 +1,32 @@
 package ej9Barberia;
 
 public class MainBarberia {
-    public static void main(String[] args) {
-        final int NUM_BARBEROS = 5;
-        final int NUM_SILLAS = 10;
-        final int NUM_CLIENTES = 50;
+    public static void main(String[] args) throws InterruptedException {
+        int numSillas = 10;
+        int numBarberos = 5;
+        int numClientes = 50;
 
-        GestorBarberia gestor = new GestorBarberia(NUM_SILLAS);
-        Barbero[] barberos = new Barbero[NUM_BARBEROS];
-        for (int i = 0; i < NUM_BARBEROS; i++) {
-            barberos[i] = new Barbero(gestor, (i + 1));
+        GestorBarberia gestor = new GestorBarberia(numSillas);
+
+        Barbero[] barberos = new Barbero[numBarberos];
+        for (int i = 0; i < numBarberos; i++) {
+            barberos[i] = new Barbero(gestor, i + 1);
             barberos[i].start();
         }
-        Thread[] clientes = new Thread[NUM_CLIENTES];
-        for (int i = 0; i < NUM_CLIENTES; i++) {
-            clientes[i] = new Cliente(gestor, (i + 1));
+
+        Thread[] clientes = new Thread[numClientes];
+        for (int i = 0; i < numClientes; i++) {
+            clientes[i] = new Cliente(gestor, i + 1);
             clientes[i].start();
-            try {
-                Thread.sleep((long)(Math.random() * 100));
-            } catch (InterruptedException e) {}
+            Thread.sleep(50);
         }
-        for (int i = 0; i < NUM_CLIENTES; i++) {
-            try {
-                clientes[i].join();
-            } catch (InterruptedException e) {}
+
+        for (Thread c : clientes) {
+            c.join();
         }
 
         System.out.println("Se han ido todos los clientes.");
-        for (int i = 0; i < NUM_BARBEROS; i++) {
-            barberos[i].interrupt(); 
-        }
+        gestor.cerrar();
         System.out.println("Barberia cerrada.");
     }
 }

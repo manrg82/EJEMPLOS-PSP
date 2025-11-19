@@ -16,15 +16,15 @@ class Filosofo extends Thread {
 	 public void run() {
 	     try {
 	         while (true) {
-	             System.out.println("El filósofo " + id + " está pensando.");
+	             System.out.println("El filosofo " + id + " esta pensando.");
 	             Thread.sleep(random.nextInt(4000) + 1000);
 	             mesa.cogerCubiertos(id);
-	             System.out.println("Filosofo " + id + " está comiendo.");
+	             System.out.println("Filosofo " + id + " esta comiendo.");
 	             Thread.sleep(2000);
 	             mesa.soltarCubiertos(id);
 	         }
 	     } catch (InterruptedException e) {
-	         System.out.println("Filósofo " + id + " interrumpido.");
+	         System.out.println("Filosofo " + id + " interrumpido.");
 	     }
 	 }
 }

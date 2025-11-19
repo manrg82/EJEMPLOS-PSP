@@ -10,15 +10,10 @@ class Cliente extends Thread {
 
     @Override
     public void run() {
-        try {
-            int idSilla = gestor.entrarEnBarberia(nombre);
-            
-            if (idSilla != -1) {
-                gestor.esperarCortePelo(idSilla);
-                System.out.println(nombre + " ya he sido atendido, me marcho");
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        Silla silla = gestor.solicitarSilla(nombre);
+        if (silla != null) {
+            gestor.esperarCorte(silla);
+            System.out.println(nombre + " ya he sido atendido, me marcho");
         }
     }
 }

@@ -10,16 +10,14 @@ class Barbero extends Thread {
 
     @Override
     public void run() {
-        while (true) {
-            try {
-                int idSilla = gestor.siguienteCliente(nombre);
-                System.out.println(nombre + " atendiendo silla: " + idSilla);
-                Thread.sleep(250);
-                gestor.finCorte(idSilla, nombre);
-
-            } catch (InterruptedException e) {
-                return; 
+        try {
+            while (true) {
+                Silla silla = gestor.esperarCliente();
+                if (silla == null) break;
+                gestor.finalizarCorte(silla, nombre);
             }
+        } catch (InterruptedException e) {
+            
         }
     }
 }

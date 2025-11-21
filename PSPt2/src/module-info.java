@@ -4,5 +4,5 @@
 /**
  * 
  */
-module PSPTema2 {
+module PSPt2 {
 }

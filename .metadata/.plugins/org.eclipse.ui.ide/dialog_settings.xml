@@ -6,6 +6,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\b15-05m\Documents\GitHub\EJEMPLOS-PSP"/>
+			<item value="C:\Users\b15-05m\Documents\GitHub\EJEMPLOS-PSP\PSPt2"/>
 			<item value="C:\EJEMPLOS-PSP\ProcessBuilder"/>
 			<item value="C:\EJEMPLOS\ProcessBuilder"/>
 		</list>
@@ -16,5 +18,13 @@
 			<item key="DIALOG_HEIGHT" value="629"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item key="DIALOG_X_ORIGIN" value="676"/>
+		<item key="DIALOG_Y_ORIGIN" value="341"/>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
 	</section>
 </section>

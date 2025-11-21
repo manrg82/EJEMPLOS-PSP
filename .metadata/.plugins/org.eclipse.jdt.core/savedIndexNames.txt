@@ -1,4 +1,2 @@
-INDEX VERSION 1.134+C:\EJEMPLOS-PSP\.metadata\.plugins\org.eclipse.jdt.core
-707109087.index
-78270986.index
+INDEX VERSION 1.134+C:\Users\b15-05m\Documents\GitHub\EJEMPLOS-PSP\.metadata\.plugins\org.eclipse.jdt.core
 1865797976.index

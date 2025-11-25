@@ -1,3 +1,5 @@
+package ej9BarberiaSOLUCIONSANTA;
+
 public class Lanzador {
 
 	private static final int NUM_BARBEROS = 5;

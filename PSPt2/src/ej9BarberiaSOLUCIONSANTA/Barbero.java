@@ -1,3 +1,5 @@
+package ej9BarberiaSOLUCIONSANTA;
+
 public class Barbero extends Thread {
 	GestorSillas gestorSillas;
 

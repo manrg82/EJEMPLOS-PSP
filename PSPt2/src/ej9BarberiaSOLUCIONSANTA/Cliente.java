@@ -1,3 +1,5 @@
+package ej9BarberiaSOLUCIONSANTA;
+
 public class Cliente extends Thread {
 	private GestorSillas gestorSillas;
 	

@@ -1,3 +1,4 @@
+package ej9BarberiaSOLUCIONSANTA;
 
 public class Silla {
 	

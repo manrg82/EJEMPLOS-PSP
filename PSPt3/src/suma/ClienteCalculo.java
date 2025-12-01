@@ -12,7 +12,8 @@ public class ClienteCalculo {
 	/**
 	 * @param args
 	 * @throws IOException
-	 */
+	 */						
+	
 	public static void main(String[] args) throws Exception {
 		Socket socket = null;
 		BufferedReader bfr = null;

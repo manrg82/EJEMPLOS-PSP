@@ -6,6 +6,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class ClienteSuma {
 
@@ -20,7 +21,29 @@ public class ClienteSuma {
 			socket.connect(direccion);
 
 			oos = new ObjectOutputStream(socket.getOutputStream());
-			CalculoRequest request = new CalculoRequest(15, 84, EnumOperacion.SUMA);
+			Scanner sc=new Scanner(System.in);	
+			int nm1=sc.nextInt();
+			int nm2=sc.nextInt();
+			char opt=(char)sc.nextByte();
+			CalculoRequest request=null;
+			switch(opt) {
+
+			case '+':
+				request = new CalculoRequest(nm1,nm2, EnumOperacion.SUMA);
+				break;
+			case '-':
+				request = new CalculoRequest(nm1,nm2, EnumOperacion.RESTA);
+				break;
+			case '*':
+				request = new CalculoRequest(nm1,nm2, EnumOperacion.MULTIPLICACION);
+				break;
+			case '/':
+				request = new CalculoRequest(nm1,nm2, EnumOperacion.DIVISION);
+				break;
+			default:
+					
+				break;
+			}
 			oos.writeObject(request);
 			oos.flush();
 

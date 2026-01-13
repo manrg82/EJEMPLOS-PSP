@@ -1,3 +1,5 @@
+package ej5;
+
 import java.util.Observable;
 
 public class AvionNormal extends Observable {

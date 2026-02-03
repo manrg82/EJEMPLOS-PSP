@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 @Entity
 @Table(name="PERSONA", schema="personas")
 public class Persona implements java.io.Serializable{
@@ -18,6 +19,7 @@ private String nombre;
 @Column(name="APELLIDOS")
 private String apellidos;
 @Column(name="DOMICILIO")
+@Email
 private String domicilio;
 @Column(name="EMAIL")
 private String email;

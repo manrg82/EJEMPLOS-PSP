@@ -20,7 +20,7 @@ public class SendMail implements ItemWriter<SimpleMailMessage> {
 		props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 		props.put("mail.debug", "true");
 		final String username = "manuelruizgutierrez810@gmail.com";
-		final String password = "nzdq tpdt dhdy zxpc";
+		final String password = "zics sdzj tqil wtsh";
 		Session session = Session.getInstance(props);
 		JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 		mailSender.setSession(session);

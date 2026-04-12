@@ -1,0 +1,16 @@
+Hola soy m1 y he intentado retirar 50 productos
+Hola soy m2 y he intentado retirar 62 productos
+Hola soy m3 y he intentado retirar 30 productos
+Hola soy m1 y he intentado retirar 26 productos
+Hola soy m3 y he intentado retirar 65 productos
+Hola soy m2 y he intentado retirar 64 productos
+Hola soy m3 y he intentado retirar 54 productos
+Hola soy m1 y he intentado retirar 55 productos
+Hola soy m2 y he intentado retirar 55 productos
+Hola soy m1 y he intentado retirar 10 productos
+Hola soy m2 y he intentado retirar 94 productos
+Hola soy m3 y he intentado retirar 26 productos
+Hola soy m1 y he intentado retirar 55 productos
+Hola soy m3 y he intentado retirar 87 productos
+Hola soy m2 y he intentado retirar 18 productos
+Sobraron 4249 de stock

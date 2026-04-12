@@ -1,0 +1,15 @@
+--- Iniciando recuento en Colegio Distrito: Norte ---
+Se han contado 81 votos en la urna ur0
+Se han contado 125 votos en la urna ur1
+Se han contado 223 votos en la urna ur2
+Se han contado 102 votos en la urna ur0
+Se han contado 64 votos en la urna ur2
+Se han contado 194 votos en la urna ur1
+Se han contado 57 votos en la urna ur2
+Se han contado 166 votos en la urna ur1
+Se han contado 64 votos en la urna ur0
+Se han contado 159 votos en la urna ur0
+Se han contado 97 votos en la urna ur2
+Se han contado 144 votos en la urna ur1
+--- Fin de recuento local enNorte ---
+Total de votos contabilizados en Colegio Norte: 1476 votos.

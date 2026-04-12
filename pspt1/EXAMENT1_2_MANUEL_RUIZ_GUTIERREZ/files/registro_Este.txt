@@ -1,0 +1,19 @@
+--- Iniciando recuento en Colegio Distrito: Este ---
+Se han contado 75 votos en la urna ur0
+Se han contado 250 votos en la urna ur1
+Se han contado 148 votos en la urna ur2
+Se han contado 120 votos en la urna ur3
+Se han contado 129 votos en la urna ur3
+Se han contado 250 votos en la urna ur2
+Se han contado 52 votos en la urna ur1
+Se han contado 230 votos en la urna ur0
+Se han contado 100 votos en la urna ur2
+Se han contado 126 votos en la urna ur3
+Se han contado 98 votos en la urna ur1
+Se han contado 243 votos en la urna ur0
+Se han contado 158 votos en la urna ur1
+Se han contado 119 votos en la urna ur3
+Se han contado 82 votos en la urna ur0
+Se han contado 142 votos en la urna ur2
+--- Fin de recuento local enEste ---
+Total de votos contabilizados en Colegio Este: 2322 votos.

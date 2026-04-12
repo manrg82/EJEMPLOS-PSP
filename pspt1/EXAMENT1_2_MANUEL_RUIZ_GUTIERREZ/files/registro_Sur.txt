@@ -1,0 +1,15 @@
+--- Iniciando recuento en Colegio Distrito: Sur ---
+Se han contado 135 votos en la urna ur1
+Se han contado 149 votos en la urna ur2
+Se han contado 123 votos en la urna ur0
+Se han contado 174 votos en la urna ur1
+Se han contado 79 votos en la urna ur2
+Se han contado 101 votos en la urna ur0
+Se han contado 170 votos en la urna ur0
+Se han contado 66 votos en la urna ur1
+Se han contado 107 votos en la urna ur2
+Se han contado 187 votos en la urna ur2
+Se han contado 166 votos en la urna ur0
+Se han contado 189 votos en la urna ur1
+--- Fin de recuento local enSur ---
+Total de votos contabilizados en Colegio Sur: 1646 votos.

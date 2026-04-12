@@ -1,0 +1,19 @@
+--- Iniciando recuento en Colegio Distrito: Oeste ---
+Se han contado 244 votos en la urna ur0
+Se han contado 62 votos en la urna ur2
+Se han contado 236 votos en la urna ur1
+Se han contado 176 votos en la urna ur3
+Se han contado 211 votos en la urna ur0
+Se han contado 117 votos en la urna ur3
+Se han contado 72 votos en la urna ur2
+Se han contado 209 votos en la urna ur1
+Se han contado 190 votos en la urna ur1
+Se han contado 193 votos en la urna ur2
+Se han contado 137 votos en la urna ur3
+Se han contado 68 votos en la urna ur0
+Se han contado 236 votos en la urna ur3
+Se han contado 133 votos en la urna ur2
+Se han contado 81 votos en la urna ur1
+Se han contado 111 votos en la urna ur0
+--- Fin de recuento local enOeste ---
+Total de votos contabilizados en Colegio Oeste: 2476 votos.

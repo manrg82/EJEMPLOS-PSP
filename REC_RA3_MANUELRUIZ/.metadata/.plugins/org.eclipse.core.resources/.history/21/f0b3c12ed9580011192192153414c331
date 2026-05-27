@@ -1,0 +1,46 @@
+package servidor;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+import java.util.ArrayList;
+
+import comun.Peticion;
+import comun.Respuesta;
+
+public class HiloComida implements Runnable{
+	private Socket sc;
+	public HiloComida(Socket s) {
+		this.sc=s;
+	}
+	@Override
+	public void run() {
+		try(
+			ObjectOutputStream out=new ObjectOutputStream(sc.getOutputStream());
+			ObjectInputStream inp=new ObjectInputStream(sc.getInputStream());
+		){
+			Peticion request=(Peticion)inp.readObject();
+			if(request.getTipo().equals("NOMBRES_PLATOS_DISPONIBLES")) {//en caso de que el usuario pida la lista de platos
+				ArrayList<String> listaplatosdisp=ServidorComida.getListaComidasDisp();
+				out.writeObject(new Respuesta("NOMBRES_PLATOS_DISPONIBLES",0,true,listaplatosdisp,"a"));
+				out.flush();
+			}else if(request.getTipo().equals("UNIDADES_PLATO")) {
+				int cantidad=ServidorComida.getCantidadPlato(request.getComida());
+				out.writeObject(new Respuesta("UNIDADES_PLATO",cantidad,true,null,request.getComida()));
+				out.flush();
+			}else {
+				return;
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+package comun;
+
+import java.io.Serializable;
+
+public class Peticion implements Serializable{
+	private String tipo;
+	private int cantidad;
+	private String comida;
+	public Peticion
+}

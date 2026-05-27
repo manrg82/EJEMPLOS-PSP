@@ -1,0 +1,57 @@
+package servidor;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import comun.Peticion;
+
+public class ServidorComida {
+	private static HashMap<String,Integer> listacomidas;
+	public synchronized static String getLista(){
+		return new String(
+				"Tortilla de Patata;"+listacomidas.get("Tortilla de Patata")+
+				";Ensaladilla Rusa;"+listacomidas.get("Ensaladilla Rusa")+
+				";Paella;"+listacomidas.get("Paella")+
+				";Pescado;"+listacomidas.get("Pescado")
+				);
+	}
+	public synchronized boolean retirarPlatos(String plato, int cant) {
+		if(listacomidas.get(plato)>=cant) {
+			listacomidas.put(plato,listacomidas.get(plato)-cant);
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+	public synchronized static int getCantidadPlato(String plato) {
+		return listacomidas.get(plato);
+	}
+	public static void main(String[] args) {
+		listacomidas= new HashMap<>();//añado la comida al hashmap
+		listacomidas.put("Tortilla de Patata",15);
+		listacomidas.put("Ensaladilla Rusa",25);
+		listacomidas.put("Paella",20);
+		listacomidas.put("Pescado",40);
+		
+		try (ServerSocket soc=new ServerSocket(5555);){//arranco el socket
+			System.out.println("SERVIDOR ARRANCADO, ESPERANDO PETICION...");
+			while (true) {
+				Socket sc=soc.accept();//espero peticiones
+				System.out.println("PETICION RECIBIDA, ENVIANDO RESPUESTA");
+				new HiloComida(sc).run();//una vez recibida la peticion mando al hilo a trabajar
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

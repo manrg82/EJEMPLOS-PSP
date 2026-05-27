@@ -1,0 +1,34 @@
+package comun;
+
+import java.io.Serializable;
+
+public class Respuesta implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private String plato;
+	private int cantidad;
+	private String tipo;
+	private boolean exito;
+	private String listaPlatos;
+	private String error;
+	public Respuesta(String tipo,int cant, boolean ex, String lista, String plat) {
+		this.tipo=tipo;
+		if(tipo=="NOMBRES_PLATOS_DISPONIBLES") {
+			this.exito=ex;
+			if(ex) {
+				this.listaPlatos=lista;
+			}else {
+				this.error="No hay ningun plato disponible";
+			}
+		}else {
+			this.exito=ex;
+			if(ex) {
+				this.plato=plat;
+				this.cantidad=cant;
+			}
+			this.error="No hay platos de "+ plat +" suficientes";
+		}
+	}
+}

@@ -1,0 +1,19 @@
+package servidor;
+
+import java.util.ArrayList;
+
+public class HiloComida implements Runnable{
+	
+	@Override
+	public void run() {
+		Peticion request=;
+		if(request.getTipo().equals("NOMBRES_PLATOS_DISPONIBLES")) {
+			
+		}else if(request.getTipo().equals("UNIDADES_PLATO")) {
+			
+		}else {
+			return;
+		}
+	}
+
+}

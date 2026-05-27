@@ -1,0 +1,67 @@
+package servidor;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import comun.Peticion;
+
+public class ServidorComida {
+	private static HashMap<String,Integer> listacomidas;
+	public static synchronized ArrayList<String> getListaComidasDisp() {
+		ArrayList<String> listaplatos=new ArrayList<>();
+		if(listacomidas.get("Tortilla de patata")>0) {
+			listaplatos.add("Tortilla de patata");
+		}
+		if(listacomidas.get("Ensaladilla Rusa")>0) {
+			listaplatos.add("Ensaladilla Rusa");
+		}
+		if(listacomidas.get("Paella")>0) {
+			listaplatos.add("Paella");
+		}
+		if(listacomidas.get("Pescado")>0) {
+			listaplatos.add("Pescado");
+		}
+		return listaplatos;
+	}
+	public synchronized boolean retirarPlatos(String plato, int cant) {
+		if(listacomidas.get(plato)>=cant) {
+			listacomidas.put(plato,listacomidas.get(plato)-cant);
+			return true;
+		}else {
+			return false;
+		}
+		
+	}
+	public synchronized static int getCantidadPlato(String plato) {
+		return listacomidas.get(plato);
+	}
+	public static void main(String[] args) {
+		listacomidas= new HashMap<>();
+		listacomidas.put("Tortilla de Patata",15);
+		listacomidas.put("Ensaladilla Rusa",25);
+		listacomidas.put("Paella",20);
+		listacomidas.put("Pescado",40);
+		
+		try (ServerSocket soc=new ServerSocket(5555);){
+			System.out.println("SERVIDOR ARRANCADO, ESPERANDO PETICION...");
+			while (true) {
+				
+				Socket sc=soc.accept();
+				System.out.println("PETICION RECIBIDA, ENVIANDO RESPUESTA");
+				new HiloComida(sc).run();;
+			}
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

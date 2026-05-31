@@ -1,0 +1,1 @@
+Núcleos: 6144, Frecuencia: 2600, Rendimiento: 15974

@@ -1,0 +1,1 @@
+Núcleos: 2560, Frecuencia: 2424, Rendimiento: 6205

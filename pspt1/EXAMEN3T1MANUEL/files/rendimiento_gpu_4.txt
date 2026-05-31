@@ -1,0 +1,1 @@
+Núcleos: 3840, Frecuencia: 2430, Rendimiento: 9331
